@@ -33,10 +33,10 @@ const DeptGallery = ({ department, title = "Department Gallery" }: DeptGalleryPr
   return (
     <section className="mt-12">
       <div className="flex items-center gap-3 mb-6">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-blue-50 text-blue-700">
+        <div className="flex h-11 w-11 items-center justify-center rounded-md bg-primary/5 text-primary">
           <Images className="h-6 w-6" />
         </div>
-        <h2 className="text-2xl font-bold text-slate-950 font-heading">{title}</h2>
+        <h2 className="text-2xl font-bold text-primary font-heading">{title}</h2>
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -44,7 +44,7 @@ const DeptGallery = ({ department, title = "Department Gallery" }: DeptGalleryPr
           <button
             key={i}
             onClick={() => setLightbox(i)}
-            className="group relative aspect-video overflow-hidden rounded-2xl border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-slate-900/10"
+            className="group relative aspect-video overflow-hidden rounded-lg border border-border shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/50 hover:shadow-xl hover:shadow-primary/10"
           >
             <img
               src={img.src}
@@ -52,7 +52,7 @@ const DeptGallery = ({ department, title = "Department Gallery" }: DeptGalleryPr
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
             {img.caption && (
-              <div className="absolute inset-x-0 bottom-0 bg-slate-950/70 text-white text-xs font-sans px-3 py-2 translate-y-full group-hover:translate-y-0 transition-transform">
+              <div className="absolute inset-x-0 bottom-0 bg-primary/80 text-white text-xs font-sans px-3 py-2 translate-y-full group-hover:translate-y-0 transition-transform">
                 {img.caption}
               </div>
             )}

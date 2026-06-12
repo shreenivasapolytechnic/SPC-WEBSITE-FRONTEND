@@ -19,7 +19,7 @@ const NoticesSection = () => {
   }
 
   return (
-    <section className="bg-slate-50 py-20">
+    <section className="bg-muted py-20">
       <div className="container mx-auto px-4">
         <div className="mb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -57,14 +57,14 @@ const NoticesSection = () => {
                     </span>
                   ) : null}
                 </div>
-                <h3 className="mb-2 line-clamp-2 text-lg font-semibold text-slate-950">
+                <h3 className="mb-2 line-clamp-2 font-heading text-lg font-bold text-primary">
                   {notice.title}
                 </h3>
                 <p className="mb-4 line-clamp-3 text-sm text-muted-foreground">
                   {notice.description}
                 </p>
                 {notice.pdfLink ? (
-                  <Button asChild variant="outline" size="sm" className="rounded-full">
+                  <Button asChild variant="outline" size="sm" className="rounded-md border-gold/40 text-primary hover:bg-primary hover:text-white">
                     <a href={notice.pdfLink} target="_blank" rel="noreferrer">
                       View Notice
                       <ExternalLink className="h-4 w-4" />

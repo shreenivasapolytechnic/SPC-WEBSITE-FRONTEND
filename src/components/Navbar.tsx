@@ -45,7 +45,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-slate-200/80 bg-white/90 shadow-sm shadow-slate-900/5 backdrop-blur-xl">
+    <nav className="fixed left-0 right-0 top-0 z-50 border-b border-gold/25 bg-primary shadow-sm shadow-primary/20 backdrop-blur-xl">
 
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         <Link to="/" className="flex items-center gap-3">
@@ -57,13 +57,13 @@ const Navbar = () => {
             <img src={collegeLogo} alt="SPC Logo" className="h-9 w-auto" />
           </div>
           <div className="hidden sm:block">
-            <p className="text-sm md:text-base font-semibold text-slate-950 leading-tight font-sans">
+            <p className="font-heading text-sm font-bold leading-tight text-gold md:text-base">
               Shreenivasa
             </p>
-            <p className="text-sm md:text-base font-semibold text-slate-950 leading-tight font-sans">
+            <p className="font-heading text-sm font-bold leading-tight text-gold md:text-base">
               Polytechnic College
             </p>
-            <p className="text-[10px] text-blue-700 font-medium font-sans">
+            <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-gold">
               Committed to Excellence in Technical Education
             </p>
           </div>
@@ -88,10 +88,10 @@ const Navbar = () => {
                   to={item.href}
                   aria-haspopup={item.children ? "menu" : undefined}
                   aria-expanded={item.children ? openDropdown === item.label : undefined}
-                  className={`flex items-center gap-1 px-3 py-2 text-sm transition-colors font-sans ${
+                  className={`flex items-center gap-1 border-b-2 px-3 py-2 font-sans text-sm font-semibold transition-colors ${
                     active
-                      ? "text-blue-700"
-                      : "text-slate-600 hover:text-slate-950"
+                      ? "border-gold text-gold"
+                      : "border-transparent text-gold/80 hover:text-gold"
                   }`}
                   onFocus={() => item.children && setOpenDropdown(item.label)}
                   onBlur={(e) => {
@@ -113,7 +113,7 @@ const Navbar = () => {
                     role="menu"
                     aria-label={`${item.label} submenu`}
                     tabIndex={-1}
-                    className="absolute left-0 top-full min-w-[220px] rounded-2xl border border-slate-200 bg-white p-2 shadow-xl shadow-slate-900/10"
+                    className="absolute left-0 top-full min-w-[220px] rounded-lg border border-border bg-white p-2 shadow-xl shadow-primary/10"
                   >
                     {item.children.map((child) => {
                       const childActive = location.pathname === child.href;
@@ -124,8 +124,8 @@ const Navbar = () => {
                           role="menuitem"
                           className={`block px-4 py-2 text-sm transition-colors font-sans ${
                             childActive
-                              ? "rounded-xl bg-blue-50 text-blue-700"
-                              : "rounded-xl text-slate-600 hover:bg-slate-50 hover:text-slate-950"
+                              ? "rounded-md bg-primary/5 text-gold-dark"
+                              : "rounded-md text-gold-dark/80 hover:bg-muted hover:text-gold-dark"
                           }`}
                           onFocus={() => setOpenDropdown(item.label)}
                           onKeyDown={(e) => {
@@ -148,7 +148,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="rounded-xl border border-slate-200 p-2 text-slate-900 lg:hidden"
+          className="rounded-md border border-gold/35 p-2 text-gold lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation"
         >
@@ -159,12 +159,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="max-h-[80vh] overflow-y-auto border-t border-slate-200 bg-white lg:hidden">
+        <div className="max-h-[80vh] overflow-y-auto border-t border-border bg-white lg:hidden">
           {navItems.map((item) => (
             <div key={item.label}>
               <Link
                 to={item.href}
-                className="block border-b border-slate-100 px-6 py-3 text-sm font-medium text-slate-700 hover:text-blue-700 font-sans"
+                className="block border-b border-gold/20 px-6 py-3 font-sans text-sm font-semibold text-gold hover:text-gold-light"
                 onClick={() => !item.children && setMobileOpen(false)}
               >
                 {item.label}
@@ -173,7 +173,7 @@ const Navbar = () => {
                 <Link
                   key={child.label}
                   to={child.href}
-                  className="block border-b border-slate-100 px-10 py-2 text-xs font-medium text-slate-500 hover:text-blue-700 font-sans"
+                  className="block border-b border-gold/20 px-10 py-2 font-sans text-xs font-medium text-gold/80 hover:text-gold-light"
                   onClick={() => setMobileOpen(false)}
                 >
                   {child.label}

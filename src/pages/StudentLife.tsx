@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
-import { Bus, Home, Loader2, Music, RefreshCw, Trophy, Users } from "lucide-react";
+import { Bus, Home, Loader2, Music, Trophy, Users } from "lucide-react";
 
 import PageLayout from "@/components/PageLayout";
 import {
@@ -9,7 +9,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
 import {
   fetchStudentLife,
   resolveImageUrl,
@@ -20,8 +19,7 @@ const fallbackItems: StudentLifeItem[] = [
   {
     _id: "fallback-clubs",
     title: "Student Clubs",
-    description:
-      "Students participate in coding contests, technical clubs, workshops, and creative campus activities.",
+    description: "Students participate in coding contests, technical clubs, workshops, and creative campus activities.",
     category: "clubs",
     imageUrl: "",
     publicId: null,
@@ -33,8 +31,7 @@ const fallbackItems: StudentLifeItem[] = [
   {
     _id: "fallback-sports",
     title: "Sports",
-    description:
-      "Students take part in athletics, volleyball, cricket, football, and indoor games.",
+    description: "Students take part in athletics, volleyball, cricket, football, and indoor games.",
     category: "sports",
     imageUrl: "",
     publicId: null,
@@ -46,8 +43,7 @@ const fallbackItems: StudentLifeItem[] = [
   {
     _id: "fallback-cultural",
     title: "Cultural Events",
-    description:
-      "Cultural programmes and celebrations encourage student creativity and stage confidence.",
+    description: "Cultural programmes and celebrations encourage student creativity and stage confidence.",
     category: "cultural",
     imageUrl: "",
     publicId: null,
@@ -59,8 +55,7 @@ const fallbackItems: StudentLifeItem[] = [
   {
     _id: "fallback-hostel",
     title: "Hostel",
-    description:
-      "Hostel facilities provide safe accommodation and a supportive study environment.",
+    description: "Hostel facilities provide safe accommodation and a supportive study environment.",
     category: "hostel",
     imageUrl: "",
     publicId: null,
@@ -82,20 +77,10 @@ const fallbackItems: StudentLifeItem[] = [
           busNumber: "1",
           routeName: "Thottampatti Vellalapatti Route",
           stops: [
-            "Sammandahalli Pudur",
-            "M. Velampatti",
-            "Pallipatti",
-            "Marudipatti",
-            "Morappur",
-            "Chindalpadi",
-            "Pasuvapuram",
-            "Kandagoundanur",
-            "Nochikuttai",
-            "Thalanatham",
-            "Veppilaipatti",
-            "Kethureddipatti",
-            "Pilparunthi X Road",
-            "College",
+            "Sammandahalli Pudur", "M. Velampatti", "Pallipatti", "Marudipatti",
+            "Morappur", "Chindalpadi", "Pasuvapuram", "Kandagoundanur",
+            "Nochikuttai", "Thalanatham", "Veppilaipatti", "Kethureddipatti",
+            "Pilparunthi X Road", "College",
           ],
         },
       ],
@@ -112,11 +97,7 @@ const categories = [
   { key: "cultural", title: "Cultural Events", description: "Celebrations, stage events, and creative programmes." },
   { key: "hostel", title: "Hostel", description: "Safe accommodation and student support." },
   { key: "transport", title: "Transport", description: "College bus routes and transport facilities." },
-] satisfies {
-  key: StudentLifeItem["category"];
-  title: string;
-  description: string;
-}[];
+] satisfies { key: StudentLifeItem["category"]; title: string; description: string; }[];
 
 const iconMap = {
   clubs: Users,
@@ -127,10 +108,7 @@ const iconMap = {
 } satisfies Record<StudentLifeItem["category"], typeof Users>;
 
 const StudentLifeCard = ({
-  category,
-  count,
-  active,
-  onClick,
+  category, count, active, onClick,
 }: {
   category: (typeof categories)[number];
   count: number;
@@ -143,20 +121,26 @@ const StudentLifeCard = ({
     <button
       type="button"
       onClick={onClick}
-      className={`premium-card group p-6 text-left ${
-        active ? "border-blue-300 bg-blue-50 shadow-xl shadow-blue-900/10" : ""
+      className={`group w-full rounded-xl border p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
+        active
+          ? "border-gold/50 bg-primary text-white shadow-lg"
+          : "border-border bg-white hover:border-gold/40"
       }`}
     >
-      <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white">
-        <Icon className="h-7 w-7" />
+      <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300 ${
+        active
+          ? "bg-white/15"
+          : "bg-primary/10 group-hover:bg-primary group-hover:text-white"
+      }`}>
+        <Icon className={`h-6 w-6 ${active ? "text-gold" : "text-primary group-hover:text-white"}`} />
       </div>
-      <h3 className="mb-2 font-heading text-lg font-bold text-slate-950">
+      <h3 className={`mb-1 font-heading text-base font-bold ${active ? "text-white" : "text-foreground"}`}>
         {category.title}
       </h3>
-      <p className="font-sans text-sm leading-6 text-slate-600">
+      <p className={`font-sans text-xs leading-5 ${active ? "text-white/70" : "text-muted-foreground"}`}>
         {category.description}
       </p>
-      <p className="mt-4 font-sans text-xs font-semibold uppercase tracking-wide text-blue-700">
+      <p className={`mt-3 font-sans text-xs font-bold uppercase tracking-wider ${active ? "text-gold" : "text-gold-dark"}`}>
         {count} {count === 1 ? "record" : "records"}
       </p>
     </button>
@@ -164,8 +148,7 @@ const StudentLifeCard = ({
 };
 
 const CategoryDetails = ({
-  category,
-  items,
+  category, items,
 }: {
   category: StudentLifeItem["category"];
   items: StudentLifeItem[];
@@ -177,14 +160,16 @@ const CategoryDetails = ({
   if (items.length === 0) return null;
 
   return (
-    <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <div className="mb-5 flex items-start gap-3">
-        <Icon className="mt-1 h-6 w-6 text-blue-700" />
+    <section className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+      <div className="mb-6 flex items-start gap-4">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+          <Icon className="h-6 w-6 text-primary" />
+        </div>
         <div>
-          <h2 className="font-heading text-2xl font-bold text-slate-950">
+          <h2 className="font-heading text-2xl font-bold text-foreground">
             {firstItem?.title || categories.find((item) => item.key === category)?.title}
           </h2>
-          <p className="mt-1 text-sm text-slate-600">{firstItem?.description}</p>
+          <p className="mt-1 font-sans text-sm text-muted-foreground">{firstItem?.description}</p>
         </div>
       </div>
 
@@ -192,15 +177,15 @@ const CategoryDetails = ({
         {items
           .filter((item) => item.imageUrl)
           .map((item) => (
-            <article key={item._id} className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+            <article key={item._id} className="overflow-hidden rounded-xl border border-border bg-muted/30">
               <img
                 src={resolveImageUrl(item.imageUrl)}
                 alt={item.title}
                 className="aspect-video w-full object-cover"
               />
               <div className="p-4">
-                <h3 className="font-heading text-base font-bold text-slate-950">{item.title}</h3>
-                <p className="mt-1 text-sm leading-6 text-slate-600">{item.description}</p>
+                <h3 className="font-heading text-base font-bold text-foreground">{item.title}</h3>
+                <p className="mt-1 font-sans text-sm leading-6 text-muted-foreground">{item.description}</p>
               </div>
             </article>
           ))}
@@ -212,19 +197,16 @@ const CategoryDetails = ({
             <AccordionItem
               key={`${route.busNumber}-${route.routeName}`}
               value={`${route.busNumber}-${route.routeName}`}
-              className="rounded-2xl border border-slate-200 bg-slate-50 px-4"
+              className="rounded-xl border border-border bg-muted/30 px-4"
             >
-              <AccordionTrigger className="text-left font-semibold hover:no-underline">
-                Bus No: {route.busNumber} - {route.routeName}
+              <AccordionTrigger className="font-semibold text-foreground hover:no-underline">
+                Bus No: {route.busNumber} — {route.routeName}
               </AccordionTrigger>
               <AccordionContent>
                 <ul className="grid gap-2 pb-2 sm:grid-cols-2 lg:grid-cols-3">
                   {route.stops.map((stop) => (
-                    <li
-                      key={stop}
-                      className="flex items-start gap-2 text-sm text-slate-600"
-                    >
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                    <li key={stop} className="flex items-center gap-2 font-sans text-sm text-muted-foreground">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
                       {stop}
                     </li>
                   ))}
@@ -239,8 +221,7 @@ const CategoryDetails = ({
 };
 
 const StudentLife = () => {
-  const [selectedCategory, setSelectedCategory] =
-    useState<StudentLifeItem["category"]>("clubs");
+  const [selectedCategory, setSelectedCategory] = useState<StudentLifeItem["category"]>("clubs");
   const studentLifeQuery = useQuery({
     queryKey: ["student-life"],
     queryFn: () => fetchStudentLife(),
@@ -248,6 +229,7 @@ const StudentLife = () => {
 
   const backendItems = studentLifeQuery.data?.data || [];
   const items = backendItems.length ? backendItems : fallbackItems;
+
   const itemsByCategory = useMemo(
     () =>
       categories.reduce<Record<StudentLifeItem["category"], StudentLifeItem[]>>(
@@ -255,28 +237,21 @@ const StudentLife = () => {
           ...grouped,
           [category.key]: items.filter((item) => item.category === category.key),
         }),
-        {
-          clubs: [],
-          sports: [],
-          cultural: [],
-          hostel: [],
-          transport: [],
-        }
+        { clubs: [], sports: [], cultural: [], hostel: [], transport: [] }
       ),
     [items]
   );
 
   return (
     <PageLayout title="Student Life" subtitle="Life at SPC Campus">
-
       {studentLifeQuery.isLoading ? (
-        <div className="flex min-h-[220px] items-center justify-center gap-3 rounded-lg border border-dashed text-muted-foreground">
+        <div className="flex min-h-[220px] items-center justify-center gap-3 rounded-xl border border-dashed border-border text-muted-foreground">
           <Loader2 className="animate-spin" />
           Loading student life content...
         </div>
       ) : (
         <div className="space-y-8">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {categories.map((category) => (
               <StudentLifeCard
                 key={category.key}

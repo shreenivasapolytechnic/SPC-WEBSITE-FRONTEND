@@ -44,9 +44,9 @@ const Placement = () => {
   return (
     <PageLayout title="Placement" subtitle="Training & Placement Cell">
       <div className="space-y-8">
-      <section className="rounded-xl border border-border bg-card p-6 shadow-sm">
+      <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
         <div className="flex items-center gap-3">
-          <Target className="w-6 h-6 text-accent" />
+          <Target className="w-6 h-6 text-primary" />
           <div>
             <h2 className="text-2xl font-bold font-heading">TRAINING &amp; PLACEMENT CELL</h2>
             <p className="text-muted-foreground font-sans mt-1">“Transferring every student’s dream in to reality”</p>
@@ -55,9 +55,9 @@ const Placement = () => {
       </section>
 
       <section className="grid lg:grid-cols-12 gap-6">
-        <div className="lg:col-span-7 rounded-xl border border-border bg-card p-6 shadow-sm">
+        <div className="lg:col-span-7 rounded-xl border border-border bg-white p-6 shadow-sm">
           <h3 className="text-xl font-bold mb-2 font-heading">PLACEMENT OFFICER MESSAGE</h3>
-          <p className="text-accent font-semibold mb-3">“Embracing New Opportunities”</p>
+          <p className="text-gold-dark font-semibold mb-3">“Embracing New Opportunities”</p>
 
           <p className="text-foreground/80 leading-relaxed">
             [SHREENIVASA POLYTECHNIC COLLEGE], we are committed to shaping young minds into
@@ -79,7 +79,7 @@ const Placement = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-5 rounded-xl border border-border bg-card p-6 shadow-sm">
+        <div className="lg:col-span-5 rounded-xl border border-border bg-white p-6 shadow-sm">
           <h3 className="text-xl font-bold mb-2 font-heading">SPC-Training &amp; Placement Cell</h3>
           <p className="text-foreground/80 leading-relaxed">
             The Training &amp; Placement Cell guide the students to choose right career, provide knowledge,
@@ -94,7 +94,7 @@ const Placement = () => {
         </div>
       </section>
 
-      <section className="rounded-xl border border-border bg-card p-6 shadow-sm">
+      <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
         <h3 className="text-xl font-bold font-heading">PLACEMENT CELL</h3>
 
         <div className="mt-4 overflow-x-auto">
@@ -158,7 +158,7 @@ const Placement = () => {
         </div>
       </section>
 
-      <section className="rounded-xl border border-border bg-card p-6 shadow-sm">
+      <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
         <h3 className="text-xl font-bold font-heading">Placement Statistics</h3>
         <p className="text-foreground/80 text-sm mt-2">
           Year-wise branch placement statistics and recruiter counts.
@@ -247,7 +247,7 @@ const Placement = () => {
         )}
       </section>
 
-      <section className="rounded-xl border border-border bg-card p-6 shadow-sm">
+      <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
         <h3 className="text-xl font-bold font-heading">Placement Activities Photos</h3>
         <p className="text-foreground/80 text-sm mt-2">
           Photos from training and placement activities conducted by the Training &amp; Placement Cell.
@@ -280,7 +280,7 @@ const Placement = () => {
       </section>
 
       <section className="grid md:grid-cols-2 gap-6">
-        <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+        <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
           <h3 className="text-xl font-bold font-heading">Vision</h3>
           <ul className="mt-4 space-y-2 text-foreground/80 list-disc pl-5">
             <li>Empowerment &amp; Success: To empower students to meet industry challenges, transforming their career dreams into reality.</li>
@@ -289,7 +289,7 @@ const Placement = () => {
           </ul>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+        <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
           <h3 className="text-xl font-bold font-heading">Mission</h3>
           <ul className="mt-4 space-y-2 text-foreground/80 list-disc pl-5">
             <li>Skill Development: To impart quality training in soft skills, aptitude, and technical skills to boost employability.</li>
@@ -300,11 +300,11 @@ const Placement = () => {
         </div>
       </section>
 
-      <section className="rounded-xl border border-border bg-card p-6 shadow-sm">
+      <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
         <h3 className="text-xl font-bold font-heading">Objectives of T&amp;P Cells</h3>
         <div className="mt-4 grid md:grid-cols-2 gap-5">
           <div className="flex items-start gap-3">
-            <Users className="w-6 h-6 text-accent mt-1" />
+            <Users className="w-6 h-6 text-primary mt-1" />
             <div>
               <p className="font-semibold">100% Placement</p>
               <p className="text-foreground/80 text-sm">Ensuring students secure rewarding positions</p>
@@ -312,7 +312,7 @@ const Placement = () => {
           </div>
 
           <div className="flex items-start gap-3">
-            <GraduationCap className="w-6 h-6 text-accent mt-1" />
+            <GraduationCap className="w-6 h-6 text-primary mt-1" />
             <div>
               <p className="font-semibold">Skill Training</p>
               <p className="text-foreground/80 text-sm">Mock interviews, group discussions, resume-building workshops</p>
@@ -320,7 +320,7 @@ const Placement = () => {
           </div>
 
           <div className="flex items-start gap-3">
-            <Building2 className="w-6 h-6 text-accent mt-1" />
+            <Building2 className="w-6 h-6 text-primary mt-1" />
             <div>
               <p className="font-semibold">Industry Visits</p>
               <p className="text-foreground/80 text-sm">Providing practical insight into industry work culture</p>
@@ -328,7 +328,7 @@ const Placement = () => {
           </div>
 
           <div className="flex items-start gap-3">
-            <Target className="w-6 h-6 text-accent mt-1" />
+            <Target className="w-6 h-6 text-primary mt-1" />
             <div>
               <p className="font-semibold">Career Guidance</p>
               <p className="text-foreground/80 text-sm">Assisting students in making informed career decisions</p>
@@ -338,7 +338,7 @@ const Placement = () => {
       </section>
 
       <section className="grid md:grid-cols-2 gap-6">
-        <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+        <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
           <h3 className="text-xl font-bold font-heading">Industry – Institute Interaction</h3>
           <ul className="mt-4 space-y-2 text-foreground/80 list-disc pl-5">
             <li>Arranging in-plant training, industrial visit, expert lectures based on the requirements.</li>
@@ -352,7 +352,7 @@ const Placement = () => {
           </ul>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+        <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
           <h3 className="text-xl font-bold font-heading">Centre for Excellence &amp; R&amp;D</h3>
           <ul className="mt-4 space-y-2 text-foreground/80 list-disc pl-5">
             <li>To create ‘Centre for Excellence’ and R&amp;D Laboratories with the support of Industries.</li>
@@ -361,7 +361,7 @@ const Placement = () => {
         </div>
       </section>
 
-      <section className="rounded-xl border border-border bg-card p-6 shadow-sm">
+      <section className="rounded-xl border border-border bg-white p-6 shadow-sm">
         <h3 className="text-xl font-bold font-heading">Career Guidance Programmes</h3>
         <p className="text-foreground/80 leading-relaxed mt-3">
           Career guidance programmes in colleges are structured initiatives—often led by placement cells—designed to help

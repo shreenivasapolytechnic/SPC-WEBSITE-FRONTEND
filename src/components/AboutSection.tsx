@@ -4,21 +4,18 @@ const AboutSection = () => {
   return (
     <section id="about" className="bg-white py-20">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
-            <p className="section-kicker">
-              Welcome to
-            </p>
-            <h2 className="section-heading mb-6">
-              Shreenivasa Polytechnic College
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6 font-sans">
+            <p className="section-kicker">Welcome to</p>
+            <h2 className="section-heading mb-6">Shreenivasa Polytechnic College</h2>
+            <div className="gold-bar mb-6" />
+            <p className="mb-5 font-sans leading-8 text-muted-foreground">
               Shreenivasa Polytechnic College is one of the premier technical institutions
               dedicated to providing quality diploma education. Since its establishment,
-              the Institution has marched towards excellence through its remarkable
+              the institution has marched towards excellence through its remarkable
               achievements in the field of Technical Education.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-8 font-sans">
+            <p className="font-sans leading-8 text-muted-foreground">
               The college offers a range of diploma programmes with industry-aligned
               curriculum, state-of-the-art laboratories, and experienced faculty members.
               SPC is committed to nurturing skilled professionals who are ready to
@@ -29,14 +26,14 @@ const AboutSection = () => {
             <img
               src={campusTour}
               alt="Shreenivasa Polytechnic College campus"
-              className="w-full rounded-3xl shadow-2xl shadow-slate-900/15"
+              className="w-full rounded-2xl border border-border shadow-2xl shadow-primary/15"
               loading="lazy"
               width={1280}
               height={720}
             />
-            <div className="absolute -bottom-6 -left-6 hidden rounded-2xl bg-white p-6 shadow-xl shadow-slate-900/15 ring-1 ring-slate-200 md:block">
-              <p className="stat-counter text-3xl">20+</p>
-              <p className="text-sm text-slate-600 font-sans">Years of Excellence</p>
+            <div className="absolute -bottom-6 -left-6 hidden rounded-xl border border-border bg-white p-5 shadow-xl shadow-primary/10 md:block">
+              <p className="font-heading text-3xl font-bold text-primary">20+</p>
+              <p className="mt-1 font-sans text-xs font-medium text-muted-foreground">Years of Excellence</p>
             </div>
           </div>
         </div>

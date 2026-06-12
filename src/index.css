@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Libre+Baskerville:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,9 +6,8 @@
 
 @layer base {
   :root {
-
-    --background: 0 0% 100%;
-    --foreground: 215 28% 17%;
+    --background: 40 30% 97%;
+    --foreground: 224 29% 14%;
 
     --card: 0 0% 100%;
     --card-foreground: 215 28% 17%;
@@ -16,36 +15,36 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 28% 17%;
 
-    --primary: 222 47% 11%;
+    --primary: 344 64% 20%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 91% 60%;
+    --secondary: 344 45% 30%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 35%;
+    --muted: 40 28% 93%;
+    --muted-foreground: 224 14% 40%;
 
     --accent: 42 82% 46%;
-    --accent-foreground: 222 47% 11%;
+    --accent-foreground: 344 64% 16%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --border: 38 22% 86%;
+    --input: 38 22% 86%;
+    --ring: 42 72% 47%;
 
-    --radius: 0.9rem;
+    --radius: 0.5rem;
 
     /* Custom tokens */
-    --hero-overlay: 222 47% 11%;
+    --hero-overlay: 344 66% 14%;
     --gold: 42 82% 46%;
-    --gold-light: 43 74% 66%;
-    --gold-dark: 39 82% 38%;
-    --navy: 222 47% 11%;
-    --navy-light: 217 91% 60%;
-    --navy-dark: 224 71% 4%;
-    --section-alt: 210 40% 98%;
+    --gold-light: 43 68% 68%;
+    --gold-dark: 38 72% 34%;
+    --navy: 344 64% 20%;
+    --navy-light: 344 45% 30%;
+    --navy-dark: 344 72% 12%;
+    --section-alt: 40 30% 95%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -56,8 +55,6 @@
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-
-
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -92,10 +89,13 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    background-image:
+      radial-gradient(circle at top left, hsl(var(--gold) / 0.07), transparent 32rem),
+      linear-gradient(180deg, hsl(42 43% 99%), hsl(var(--background)));
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Libre Baskerville', Georgia, serif;
     letter-spacing: 0;
   }
 }
@@ -104,9 +104,9 @@
   .hero-gradient {
     background: linear-gradient(
       135deg,
-      hsl(var(--hero-overlay) / 0.82) 0%,
-      hsl(var(--hero-overlay) / 0.56) 48%,
-      hsl(var(--hero-overlay) / 0.28) 100%
+      hsl(var(--hero-overlay) / 0.9) 0%,
+      hsl(var(--hero-overlay) / 0.7) 46%,
+      hsl(38 44% 18% / 0.38) 100%
     );
   }
 
@@ -131,15 +131,27 @@
   }
 
   .section-heading {
-    @apply text-3xl font-bold tracking-normal text-slate-900 md:text-4xl;
+    @apply text-3xl font-bold tracking-normal text-primary md:text-4xl;
   }
 
   .section-kicker {
-    @apply mb-3 text-sm font-bold uppercase tracking-[0.18em] text-blue-700;
+    @apply mb-3 text-xs font-bold uppercase tracking-[0.22em] text-gold-dark;
   }
 
   .premium-card {
-    @apply rounded-2xl border border-slate-200/80 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10;
+    @apply rounded-xl border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-lg;
+  }
+
+  .page-header {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(344 60% 16%) 55%, hsl(344 72% 12%) 100%);
+  }
+
+  .gold-bar {
+    @apply h-1 w-16 rounded-full bg-gradient-to-r from-gold to-gold-light;
+  }
+
+  .spc-card {
+    @apply rounded-xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:border-gold/40 hover:shadow-md;
   }
 
   .ticker-scroll {
@@ -148,8 +160,8 @@
 
   .stat-counter {
     @apply text-4xl md:text-5xl font-bold;
-    font-family: 'Poppins', sans-serif;
-    color: #1D4ED8;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: hsl(var(--primary));
   }
 }
 

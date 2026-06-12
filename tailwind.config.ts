@@ -78,7 +78,8 @@ export default {
         },
       },
       fontFamily: {
-        heading: ['"Poppins"', 'sans-serif'],
+        heading: ['"Libre Baskerville"', 'Georgia', 'serif'],
+        crest: ['"Cinzel"', 'Georgia', 'serif'],
         body: ['"Inter"', 'sans-serif'],
       },
       borderRadius: {
