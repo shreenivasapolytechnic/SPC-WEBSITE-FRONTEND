@@ -148,11 +148,7 @@ const Placement = () => {
                 <td className="py-3 px-2 text-sm text-foreground/80">K.S.SURESH KUMAR</td>
                 <td className="py-3 px-2 text-sm text-foreground/80">PLACEMENT OFFICER</td>
               </tr>
-              <tr>
-                <td className="py-3 px-2 text-sm text-foreground/80">8</td>
-                <td className="py-3 px-2 text-sm text-foreground/80">K.S.SURESH KUMAR</td>
-                <td className="py-3 px-2 text-sm text-foreground/80">PLACEMENT OFFICER</td>
-              </tr>
+             
             </tbody>
           </table>
         </div>
