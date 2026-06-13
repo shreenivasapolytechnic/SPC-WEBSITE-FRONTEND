@@ -121,17 +121,15 @@ const StudentLifeCard = ({
     <button
       type="button"
       onClick={onClick}
-      className={`group w-full rounded-xl border p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
-        active
+      className={`group w-full rounded-xl border p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${active
           ? "border-gold/50 bg-primary text-white shadow-lg"
           : "border-border bg-white hover:border-gold/40"
-      }`}
+        }`}
     >
-      <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300 ${
-        active
+      <div className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl transition-colors duration-300 ${active
           ? "bg-white/15"
           : "bg-primary/10 group-hover:bg-primary group-hover:text-white"
-      }`}>
+        }`}>
         <Icon className={`h-6 w-6 ${active ? "text-gold" : "text-primary group-hover:text-white"}`} />
       </div>
       <h3 className={`mb-1 font-heading text-base font-bold ${active ? "text-white" : "text-foreground"}`}>
@@ -139,9 +137,6 @@ const StudentLifeCard = ({
       </h3>
       <p className={`font-sans text-xs leading-5 ${active ? "text-white/70" : "text-muted-foreground"}`}>
         {category.description}
-      </p>
-      <p className={`mt-3 font-sans text-xs font-bold uppercase tracking-wider ${active ? "text-gold" : "text-gold-dark"}`}>
-        {count} {count === 1 ? "record" : "records"}
       </p>
     </button>
   );

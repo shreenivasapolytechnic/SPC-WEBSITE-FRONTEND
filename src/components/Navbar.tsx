@@ -56,14 +56,14 @@ const Navbar = () => {
           <div className="sm:hidden">
             <img src={collegeLogo} alt="SPC Logo" className="h-9 w-auto" />
           </div>
-          <div className="hidden sm:block">
-            <p className="font-heading text-sm font-bold leading-tight text-gold md:text-base">
+          <div>
+            <p className="font-heading text-xs sm:text-sm font-bold leading-tight text-gold md:text-base">
               Shreenivasa
             </p>
-            <p className="font-heading text-sm font-bold leading-tight text-gold md:text-base">
+            <p className="font-heading text-xs sm:text-sm font-bold leading-tight text-gold md:text-base">
               Polytechnic College
             </p>
-            <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-gold">
+            <p className="hidden sm:block font-sans text-[10px] font-semibold uppercase tracking-[0.14em] text-gold">
               Committed to Excellence in Technical Education
             </p>
           </div>

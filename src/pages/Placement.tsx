@@ -148,7 +148,11 @@ const Placement = () => {
                 <td className="py-3 px-2 text-sm text-foreground/80">K.S.SURESH KUMAR</td>
                 <td className="py-3 px-2 text-sm text-foreground/80">PLACEMENT OFFICER</td>
               </tr>
-             
+              <tr>
+                <td className="py-3 px-2 text-sm text-foreground/80">8</td>
+                <td className="py-3 px-2 text-sm text-foreground/80">K.S.SURESH KUMAR</td>
+                <td className="py-3 px-2 text-sm text-foreground/80">PLACEMENT OFFICER</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -166,7 +170,11 @@ const Placement = () => {
             Loading placement records...
           </div>
         ) : placements.length ? (
-          <Accordion type="single" collapsible className="mt-5 space-y-3">
+          <Accordion
+            type="multiple"
+            defaultValue={placements.map((p) => p.academicYear)}
+            className="mt-5 space-y-3"
+          >
             {placements.map((placement, index) => {
               const companies = getCompaniesForYear(placement);
               const records = [...placement.records].sort(
